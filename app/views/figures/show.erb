@@ -1,0 +1,13 @@
+<p>Figure name: <%= @figure.name %></p>
+<p>Landmarks:</p>
+<ul>
+<% @figure.landmarks.each do |landmark| %>
+  <li><a href="/landmarks/<%= landmark.id %>"><%= landmark.name %></a></li>
+<% end if @figure.landmarks %>
+</ul>
+<p>Titles:</p>
+<ul>
+<% @figure.titles.each do |title| %>
+  <li><%= title.name %></li>
+<% end if @figure.titles %>
+</ul>

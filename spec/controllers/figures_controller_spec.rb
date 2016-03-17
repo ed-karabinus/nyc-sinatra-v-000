@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+require 'pry'
 describe FiguresController do
   before do
     queenb = Figure.create(:name => "Beyonce")
@@ -30,6 +30,7 @@ describe FiguresController do
     visit '/figures/new'
     fill_in :figure_name, :with => "Doctor Who"
     check "title_#{Title.first.id}"
+
     click_button "Create New Figure"
     figure = Figure.last
     expect(Figure.all.count).to eq(3)
